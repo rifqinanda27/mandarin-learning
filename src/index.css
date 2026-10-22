@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #faf7f2;
+    --text-main: #1c222b;
+    --accent-red: #b93b3b;
+    --accent-jade: #15803d;
+  }
+
+  .dark {
+    --bg-main: #14181f;
+    --text-main: #f6f7f9;
+    --accent-red: #d95349;
+    --accent-jade: #22c55e;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+/* Chinese character specific rendering */
+.font-hanzi {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+/* Mi-zi-ge character practice grid */
+.mizige-bg {
+  background-color: #fffdfa;
+  background-image: 
+    linear-gradient(to right, rgba(185, 59, 59, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 59, 59, 0.12) 1px, transparent 1px),
+    linear-gradient(45deg, transparent calc(50% - 0.5px), rgba(185, 59, 59, 0.12) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(-45deg, transparent calc(50% - 0.5px), rgba(185, 59, 59, 0.12) 50%, transparent calc(50% + 0.5px));
+  background-size: 100% 100%;
+}
+
+.dark .mizige-bg {
+  background-color: #1e242f;
+  background-image: 
+    linear-gradient(to right, rgba(229, 121, 113, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(229, 121, 113, 0.15) 1px, transparent 1px),
+    linear-gradient(45deg, transparent calc(50% - 0.5px), rgba(229, 121, 113, 0.15) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(-45deg, transparent calc(50% - 0.5px), rgba(229, 121, 113, 0.15) 50%, transparent calc(50% + 0.5px));
+}
+
+/* Safe area padding for mobile bottom notch */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
